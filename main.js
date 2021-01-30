@@ -1,67 +1,71 @@
-let btnPlus=document.getElementById('plus');
-let btnPlusE=document.getElementById('plusE');
-let btnMinus=document.getElementById('minus');
-let btnMinusE=document.getElementById('minusE');
-let inputFirstClass=document.getElementById('FirstClassInput');
-let inputEconomyClass=document.getElementById('EconomyInput');
-let subTotal=document.getElementById('subTotal');
-let Total=document.getElementById('Total');
-let Vat=document.getElementById('VAT');
-
-let BookNow=document.getElementById('BookNow');
-
-
-btnPlus.addEventListener('click',function (){
-
-  increase(inputFirstClass,inputEconomyClass);
+//All Variable
+    let btnPlus=document.getElementById('plus');
+    let btnPlusE=document.getElementById('plusE');
+    let btnMinus=document.getElementById('minus');
+    let btnMinusE=document.getElementById('minusE');
+    let inputFirstClass=document.getElementById('FirstClassInput');
+    let inputEconomyClass=document.getElementById('EconomyInput');
+    let subTotal=document.getElementById('subTotal');
+    let Total=document.getElementById('Total');
+    let Vat=document.getElementById('VAT');
+    let BookNow=document.getElementById('BookNow');
+//End of Variable
 
 
-})
-btnPlusE.addEventListener('click',function (){
-    increase(inputEconomyClass,inputFirstClass);
+//EventListener
+        btnPlus.addEventListener('click',function (){
+
+          increase(inputFirstClass,inputEconomyClass);
 
 
-});
-btnMinus.addEventListener('click',function (){
-    decrease(inputFirstClass,inputEconomyClass);
+        })
+        btnPlusE.addEventListener('click',function (){
+            increase(inputEconomyClass,inputFirstClass);
 
 
-
-});
-btnMinusE.addEventListener('click',function (){
-    decrease(inputEconomyClass,inputFirstClass);
+        });
+        btnMinus.addEventListener('click',function (){
+            decrease(inputFirstClass,inputEconomyClass);
 
 
 
+        });
+        btnMinusE.addEventListener('click',function (){
+            decrease(inputEconomyClass,inputFirstClass);
+        });
 
-});
+    BookNow.addEventListener('click',function (){
+        let total= calculate(parseInt(inputFirstClass.value),parseInt(inputEconomyClass.value));
+        let con=confirm('Your Total is' +total);
+       if(con){
 
-BookNow.addEventListener('click',function (){
-    let total= calculate(parseInt(inputFirstClass.value),parseInt(inputEconomyClass.value));
-    let con=confirm('Your Total is' +total);
-   if(con){
+           inputEconomyClass.value=0;
+           inputFirstClass.value=0
+           subTotal.innerText = "$00";
+           Total.innerText='$00';
+           Vat.innerText='$00';
+       }
 
-       inputEconomyClass.value=0;
-       inputFirstClass.value=0
-       subTotal.innerText = "$00";
-       Total.innerText='$00';
-       Vat.innerText='$00';
-   }
-
-})
-
+    })
+//End of Event Listener
 
 
 
-
+//Function
 function increase(InputFirstId,InputEconomyId){
 
     let CountFirst=parseInt(InputFirstId.value);
-    CountFirst=CountFirst+1;
-   InputFirstId.value=CountFirst;
-    let inputEconomy=parseInt(InputEconomyId.value);
-    calculate()
 
+    if(isNaN(CountFirst)){
+        InputFirstId.value=0;
+
+    }
+    else {
+        CountFirst = CountFirst + 1;
+        InputFirstId.value = CountFirst;
+        let inputEconomy = parseInt(InputEconomyId.value);
+        calculate();
+    }
 }
 function decrease(InputFirstId,InputEconomyId){
 
@@ -92,3 +96,5 @@ function calculate(){
     Total.innerText = total;
     return total
 }
+
+//End of function

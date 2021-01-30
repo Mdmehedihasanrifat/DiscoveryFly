@@ -122,9 +122,23 @@ nav ul li a:hover, a.active{
 }
 
 
-#plus{
+span .btn-plus{
 
     background:deepskyblue!important;
     color:white;
     margin-right: 3px;
+}
+.btn-minus{
+
+    background:deepskyblue!important;
+    color:white;
+    margin-right: 3px;
+}
+.btn-plus ,.btn-minus :hover{
+
+
+    background:orangered!important;
+    color:white;
+    margin-right: 3px;
+
 }
