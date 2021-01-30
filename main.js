@@ -36,6 +36,10 @@
 
     BookNow.addEventListener('click',function (){
         let total= calculate(parseInt(inputFirstClass.value),parseInt(inputEconomyClass.value));
+        if(total<0){
+            alert("Insert perfect quantity");
+        }
+        else{
         let con=confirm('Your Total is' +total);
        if(con){
 
@@ -46,7 +50,7 @@
            Vat.innerText='$00';
        }
 
-    })
+    }})
 //End of Event Listener
 
 
@@ -86,7 +90,12 @@ function decrease(InputFirstId,InputEconomyId){
 function calculate(){
      const CountFirst=parseInt(inputFirstClass.value);
      const CountEconomy=parseInt(inputEconomyClass.value);
+if(CountFirst<0 || CountEconomy<0){
 
+    alert("Insert correct value");
+
+}
+else{
     const sub = CountFirst*150 +CountEconomy*100;
     subTotal.innerText = sub;
     const tax = Math.round(sub*0.1);
@@ -94,7 +103,7 @@ function calculate(){
 
     const total = sub+tax;
     Total.innerText = total;
-    return total
+    return total}
 }
 
 //End of function
