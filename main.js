@@ -44,6 +44,7 @@
             alert("Insert perfect quantity");
         }
         else{
+            calculate();
         let con=confirm('Your Total is' +total);
        if(con){
 
