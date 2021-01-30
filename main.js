@@ -67,13 +67,14 @@ function increase(InputFirstId,InputEconomyId){
     else {
         CountFirst = CountFirst + 1;
         InputFirstId.value = CountFirst;
-        let inputEconomy = parseInt(InputEconomyId.value);
+
         calculate();
     }
 }
 function decrease(InputFirstId,InputEconomyId){
 
     let CountFirst=parseInt(InputFirstId.value);
+
     CountFirst=CountFirst-1;
     if(CountFirst<0){
         alert("you cant decrease");
