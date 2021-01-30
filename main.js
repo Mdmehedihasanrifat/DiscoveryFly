@@ -62,7 +62,10 @@ function increase(InputFirstId,InputEconomyId){
 
     if(isNaN(CountFirst)){
         InputFirstId.value=0;
+        CountFirst = CountFirst + 1;
+        InputFirstId.value = CountFirst;
 
+        calculate();
     }
     else {
         CountFirst = CountFirst + 1;
