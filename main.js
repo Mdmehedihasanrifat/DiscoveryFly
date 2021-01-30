@@ -1,4 +1,5 @@
 //All Variable
+
     let btnPlus=document.getElementById('plus');
     let btnPlusE=document.getElementById('plusE');
     let btnMinus=document.getElementById('minus');
@@ -9,6 +10,9 @@
     let Total=document.getElementById('Total');
     let Vat=document.getElementById('VAT');
     let BookNow=document.getElementById('BookNow');
+
+   inputFirstClass.value=0;
+   inputEconomyClass.value=0;
 //End of Variable
 
 
@@ -61,7 +65,8 @@ function increase(InputFirstId,InputEconomyId){
     let CountFirst=parseInt(InputFirstId.value);
 
     if(isNaN(CountFirst)){
-        alert("insert proper value");
+        // alert("insert proper value");
+        InputFirstId.value=0;
     }
     else {
         CountFirst = CountFirst + 1;
