@@ -61,8 +61,7 @@ function increase(InputFirstId,InputEconomyId){
     let CountFirst=parseInt(InputFirstId.value);
 
     if(isNaN(CountFirst)){
-        InputFirstId.value=0;
-        calculate();
+        alert("insert proper value");
     }
     else {
         CountFirst = CountFirst + 1;
