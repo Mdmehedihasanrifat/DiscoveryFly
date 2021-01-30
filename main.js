@@ -62,9 +62,6 @@ function increase(InputFirstId,InputEconomyId){
 
     if(isNaN(CountFirst)){
         InputFirstId.value=0;
-        CountFirst = CountFirst + 1;
-        InputFirstId.value = CountFirst;
-
         calculate();
     }
     else {
@@ -94,7 +91,7 @@ function decrease(InputFirstId,InputEconomyId){
 function calculate(){
      const CountFirst=parseInt(inputFirstClass.value);
      const CountEconomy=parseInt(inputEconomyClass.value);
-if(CountFirst<0 || CountEconomy<0){
+if(CountFirst<0 || CountEconomy<0 ||isNaN(CountFirst)||isNaN(CountEconomy)){
 
     alert("Insert correct value");
 
